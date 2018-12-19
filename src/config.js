@@ -1,0 +1,17 @@
+config.state=
+{
+	file:
+	{
+		meta:{},
+		data:{}
+	},
+	view:
+	{
+		edit:'',
+		layout:'list',
+		move:[],
+		path:['index'],
+		selected:[]
+	}
+}
+config.item={text:'',list:[]}
