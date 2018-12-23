@@ -1,3 +1,8 @@
+config.item={text:'',list:[]}
+config.header=
+{
+	list:'opts,back,nav,search,add'.split(',')
+}
 config.state=
 {
 	file:
@@ -14,4 +19,3 @@ config.state=
 		selected:[]
 	}
 }
-config.item={text:'',list:[]}
