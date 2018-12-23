@@ -1,7 +1,8 @@
 config.item={text:'',list:[]}
 config.header=
 {
-	list:'opts,back,nav,search,add'.split(',')
+	item:'delete,move,deselect,edit'.split(','),
+	list:'opts,back,barNav,barSearch,add'.split(',')
 }
 config.state=
 {
