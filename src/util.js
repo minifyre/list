@@ -1,3 +1,13 @@
+util.optsItemFilter=function(state)
+{
+	const
+	exclude=[],
+	{selected}=state.view
+
+	if(selected.length!==1) exclude.push('edit') 
+
+	return x=>!exclude.includes(x)
+}
 util.txt2txts=function(txt)
 {
 	return txt.split(config.newline)

@@ -1,3 +1,9 @@
+output.optsItem=function(state)
+{
+	return config.header.item
+	.filter(util.optsItemFilter(state))
+	.map(act=>v('button',{data:{pointerup:act}},act))
+}
 output.render=function(state)
 {
 	const
