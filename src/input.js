@@ -3,10 +3,6 @@ input.add=function(state)
 	logic.itemAdd(state,logic.item(),logic.listLowest(state))
 }
 input.back=logic.back
-input.backOrOpts=function(state,evt)
-{
-	(state.view.path.length?input.back:input.opts)(state,evt)
-}
 input.blur=function(state,{target})
 {
 	const
