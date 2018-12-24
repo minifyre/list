@@ -2,7 +2,7 @@ config.item={text:'',list:[]}
 config.header=
 {
 	item:'delete,move,deselect,edit'.split(','),
-	list:'opts,back,barNav,barSearch,add'.split(',')
+	list:'opts,back,search,add'.split(',')
 }
 config.state=
 {
