@@ -4,6 +4,23 @@ output.optsItem=function(state)
 	.filter(util.optsItemFilter(state))
 	.map(act=>v('button',{data:{pointerup:act}},act))
 }
+output.optsList=function(state)
+{
+	const
+	placeholder=logic.path(state)
+				.filter(x=>!!x)
+				.slice(1)
+				.map(id=>state.file.data[id].text)
+				.join('/')+'/ (search)'
+
+	return config.header.list
+	.filter(util.optsListFilter(state))
+	.map(function(x)
+	{
+		return x!=='search'?v('button',{data:{pointerup:x}},x):
+		v('input.search',{placeholder,type:'text'})
+	})
+}
 output.render=function(state)
 {
 	const

@@ -8,6 +8,7 @@ util.optsItemFilter=function(state)
 
 	return x=>!exclude.includes(x)
 }
+util.optsListFilter=()=>true
 util.txt2txts=function(txt)
 {
 	return txt.split(config.newline)
