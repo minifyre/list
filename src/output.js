@@ -1,3 +1,15 @@
+output.list=function(state,filter,id,i,opened)
+{
+	const
+	item=state.file.data[id],
+	nextOpen=opened[i+1],
+	items=	item.list
+			.filter(x=>!!x)
+			.filter(filter)
+			.map(curry(output.item,state,nextOpen))
+
+	return v('ul',{},...items)
+}
 output.optsItem=function(state)
 {
 	return config.header.item
