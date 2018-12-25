@@ -1,3 +1,15 @@
+output.header=function(state)
+{
+	const
+	headerType=	logic.mode(state)==='move'?'optsMove':
+				!state.view.selected.length?'optsList':
+				'optsItem',
+	btns=output[headerType](state),
+	mode=logic.mode(state),
+	back=mode==='move'||logic.path(state).filter(x=>!!x).length>1
+
+	return v('header',{data:{back},on:{pointerup:curry(input,state)}},...btns)
+}
 output.list=function(state,filter,id,i,opened)
 {
 	const
