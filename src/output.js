@@ -12,6 +12,7 @@ output.header=function(state)
 
 	return v('header',{data:{back},on:{pointerup:curry(input,state)}},...btns)
 }
+output.icon=(state,item)=>v('button.icon',{data:{pointerup:'toggleSelect'}},'+')
 output.list=function(state,filter,id,i,opened)
 {
 	const
