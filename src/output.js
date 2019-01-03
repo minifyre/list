@@ -1,3 +1,5 @@
+//@todo add generic progress bar
+output.desc=(state,item)=>v('span.desc',{},item.text)
 output.header=function(state)
 {
 	const
