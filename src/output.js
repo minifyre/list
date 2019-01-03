@@ -13,6 +13,30 @@ output.header=function(state)
 	return v('header',{data:{back},on:{pointerup:curry(input,state)}},...btns)
 }
 output.icon=(state,item)=>v('button.icon',{data:{pointerup:'toggleSelect'}},'+')
+output.item=function(state,opened,id,i,arr)
+{
+	const
+	item=state.file.data[id],
+	//@todo id attr could be an issue if child can have multiple parents 
+		//& thus show up multiple times
+	attrs={data:{pointerup:'open'},id},
+	attrsDesc={data:{},on:{}}
+
+	if(id===opened) attrs.data.opened=true
+
+	if(id===state.view.edit)
+	{
+		attrsDesc.contenteditable=true
+		attrsDesc.on.render=({target})=>target.focus()
+		attrsDesc.on.blur=evt=>input.blur(state,evt)
+	}
+	else if(state.view.selected.includes(id)) attrs.data.selected=true
+
+	return v('li',attrs,
+		output.icon(state,item),
+		output.desc(state,item)
+	)
+}
 output.list=function(state,filter,id,i,opened)
 {
 	const
