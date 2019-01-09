@@ -17,6 +17,7 @@ config.state=
 		layout:'list',
 		move:[],
 		path:['index'],
-		selected:[]
+		selected:[],
+		type:'list'
 	}
 }
