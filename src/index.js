@@ -6,11 +6,15 @@ const
 {config,util,logic,output,input}=silo,
 {curry}=util
 
-export default silo(async function init(initialState)
+export default silo(async function()
 {
-	const
-	state=logic(initialState),
-	render=truth.compile(({state})=>v.render(document.body,state,output))
-
-	truth(state,render)
+	customElements.define(config.state.view.type,silo.editor)
 })
+
+silo.editor=class extends silo.customElement
+{
+	constructor(state)
+	{
+		super(state,silo)
+	}
+}

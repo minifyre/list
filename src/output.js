@@ -72,7 +72,7 @@ output.optsList=function(state)
 		v('input.search',{placeholder,type:'text'})
 	})
 }
-output.render=function(state)
+output.render=function({state})
 {
 	const
 	move=state.view.move.filter(x=>!!x),
