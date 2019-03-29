@@ -81,6 +81,5 @@ output.render=function({state})
 					[state.view.path,()=>true],
 	lists=path.filter(x=>!!x).map(util.curry(mkList,filter)),
 	main=v('main',{data:{view:state.view.layout},on:{pointerup}},...lists)
-
-	return [output.header(state),main]
+	return [v('style',{},config.style),output.header(state),main]
 }
